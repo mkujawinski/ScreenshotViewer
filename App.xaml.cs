@@ -8,10 +8,15 @@ using System.Windows;
 
 namespace ScreenshotViewer
 {
-    /// <summary>
-    /// Interaction logic for App.xaml
-    /// </summary>
     public partial class App : Application
     {
+
+        private void App_OnStartup(object sender, StartupEventArgs e)
+        {
+            MainWindow mainWindow = new MainWindow();
+            if (e.Args.Length == 1)
+                mainWindow.LoadImage(e.Args[0]);
+            mainWindow.Show();
+        }
     }
 }

@@ -5,8 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ScreenshotViewer"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="Screenshot Viewer" Height="600" Width="800">
     <Grid>
-        
+        <Image x:Name="ImageBox" VerticalAlignment="Center" HorizontalAlignment="Center" />
     </Grid>
 </Window>
