@@ -5,8 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ScreenshotViewer"
         mc:Ignorable="d"
-        Title="Screenshot Viewer" Height="600" Width="800" WindowStartupLocation="CenterScreen" KeyDown="MainWindow_OnKeyDown">
+        Title="Screenshot Viewer" Height="600" Width="800" WindowStartupLocation="CenterScreen" KeyDown="MainWindow_OnKeyDown" Background="#808080">
     <Grid>
-        <Image x:Name="ImageBox" VerticalAlignment="Center" HorizontalAlignment="Center" />
+        <Grid.RowDefinitions>
+            <RowDefinition Height="521*"/>
+            <RowDefinition Height="49*"/>
+        </Grid.RowDefinitions>
+        <Image x:Name="ImageBox" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="0"/>
+        <TextBlock x:Name="BottomPanel" VerticalAlignment="Center" HorizontalAlignment="Center" Grid.Row="1"/>
     </Grid>
 </Window>

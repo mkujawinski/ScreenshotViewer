@@ -23,6 +23,7 @@ namespace ScreenshotViewer
                 if (file.DirectoryName != null)
                     mainWindow.Images = Directory.GetFiles(file.DirectoryName).Where(s => Image.SupportedExtensions.Contains(Path.GetExtension(s))).ToArray();
                 mainWindow.CurrentImageIndex = Array.FindIndex(mainWindow.Images, img => img.Contains(e.Args[0]));
+                mainWindow.UpdateBottomPanel();
             }
                 
             mainWindow.Show();
