@@ -21,13 +21,5 @@ namespace ScreenshotViewer
         {
             InitializeComponent();
         }
-
-        public void LoadImage(string path)
-        {
-            var image = new BitmapImage(new Uri(path));
-            ImageBox.Source = image;
-            ImageBox.MaxWidth = image.PixelWidth;
-            ImageBox.MaxHeight = image.PixelHeight;
-        }
     }
 }
