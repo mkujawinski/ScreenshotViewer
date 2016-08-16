@@ -5,6 +5,8 @@ namespace ScreenshotViewer
 {
     public class Image
     {
+        public static string[] SupportedExtensions = new[] {".jpg", ".gif", ".png", ".bmp"};
+
         public static void LoadImage(string imageLocation, MainWindow targetWindow)
         {
             var image = new BitmapImage(new Uri(imageLocation));

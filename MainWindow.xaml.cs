@@ -17,6 +17,9 @@ namespace ScreenshotViewer
 {
     public partial class MainWindow : Window
     {
+        public string[] Images;
+        public int CurrentImageIndex;
+
         public MainWindow()
         {
             InitializeComponent();

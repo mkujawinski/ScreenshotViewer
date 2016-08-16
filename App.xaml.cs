@@ -16,7 +16,15 @@ namespace ScreenshotViewer
         {
             MainWindow mainWindow = new MainWindow();
             if (e.Args.Length == 1 && Path.HasExtension(e.Args[0]))
-                Image.LoadImage(e.Args[0], mainWindow);
+            {
+                var file = new FileInfo(e.Args[0]);
+
+                Image.LoadImage(file.FullName, mainWindow);
+                if (file.DirectoryName != null)
+                    mainWindow.Images = Directory.GetFiles(file.DirectoryName).Where(s => Image.SupportedExtensions.Contains(Path.GetExtension(s))).ToArray();
+                mainWindow.CurrentImageIndex = Array.FindIndex(mainWindow.Images, img => img.Contains(e.Args[0]));
+            }
+                
             mainWindow.Show();
         }
     }
