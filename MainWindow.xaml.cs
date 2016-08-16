@@ -24,5 +24,26 @@ namespace ScreenshotViewer
         {
             InitializeComponent();
         }
+
+        private void MainWindow_OnKeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.Key == Key.Escape)
+                Close();
+            if (e.Key == Key.Left)
+                LoadNextImage(-1);
+            if (e.Key == Key.Right)
+                LoadNextImage(1);
+        }
+
+        private void LoadNextImage(int indexChange)
+        {
+            if (CurrentImageIndex == 0 && indexChange < 0)
+                return;
+            if (CurrentImageIndex == Images.Length - 1 && indexChange > 0)
+                return;
+            
+            Image.LoadImage(Images[CurrentImageIndex + indexChange], this);
+            CurrentImageIndex += indexChange;
+        }
     }
 }
